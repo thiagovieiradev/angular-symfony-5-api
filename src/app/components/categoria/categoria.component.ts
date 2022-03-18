@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategoriaApiService } from 'src/app/services/categoria-api.service';
-import { Categoria } from './categoriaModel';
+import { CategoriaModel } from './categoriaModel';
 import { CategoriaService } from './categoriaService';
 
 @Component({
@@ -15,7 +15,7 @@ export class CategoriaComponent implements OnInit {
 
   categorias:any = [];
 
-  categoria: Categoria[];
+  categoria: CategoriaModel[];
 
   first = 0;
 
