@@ -1,0 +1,49 @@
+<div class="categoria">
+    <h1>Gerenciamento de categorias</h1>   
+    
+    <!-- <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dado of lista">
+                <td>{{dado.id}}</td>
+                <td>{{dado.nome}}</td>
+                <td>
+                    <button class="editar">Editar</button>
+                    <button class="excluir">Exluir</button>
+                </td>                
+            </tr>
+        </tbody>        
+    </table>    -->
+
+    <div class="card">
+        <h5>Implicit Pagination</h5>
+        <p-table [value]="categoria" [paginator]="true" [rows]="2" [showCurrentPageReport]="true" responsiveLayout="scroll"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10,25,50]">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-categoria>
+                <tr>
+                    <td>{{categoria.id}}</td>
+                    <td>{{categoria.nome}}</td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="paginatorleft">
+                <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+            </ng-template>
+            <ng-template pTemplate="paginatorright">
+                <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+            </ng-template>
+        </p-table>
+    </div>
+
+</div>
